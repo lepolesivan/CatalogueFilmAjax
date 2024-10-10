@@ -1,17 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app">
-        <input type="search">
-        <button oncli>Valider</button>
-    </div>
-    <script type="module" src="./js/main.js">
-    </script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite App</title>
+	</head>
+	<body>
+		<div id="app">
+			<form id="searchForm" action="">
+				<input id="searchInput" type="text" />
+				<input type="submit" />
+			</form>
+
+			<div id="moviesList"></div>
+			<div id="controls"></div>
+      <div id="details"></div>
+		</div>
+		<script type="module" src="./js/main.js"></script>
+	</body>
 </html>
