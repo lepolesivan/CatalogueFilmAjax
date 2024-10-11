@@ -19,6 +19,7 @@ const searchMovies = (query, page = 1) => {
 	fetch(url)
 		.then((response) => response.json()) // Convertir la réponse en format JSON
 		.then((data) => {
+			
 			displayMovies(data.results); // Appeler une fonction pour afficher les films
 			displayControls(query, data.page, data.total_pages); // Gérer l'apparition des butons de controls
 			//managePagination(data.page, data.total_pages); // Gérer la pagination
@@ -76,8 +77,14 @@ const displayMovies = (movies) => {
             if(response.ok){
                 return response.json().then(function (data){
                     console.log(data);
-                    details.innerHTML = `${data.overview}`;
-                });
+					moviesList.innerHTML = "";
+                    details.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="${data.title}">
+											<div>
+												<h3>${data.title}</h3>
+												<p>${data.release_date}</p>
+												<p>${data.overview}</p>
+												</div>`;
+				});
             }else{
                 throw new Error('Erreur page détails');
             }
